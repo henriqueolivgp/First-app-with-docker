@@ -1,24 +1,24 @@
-Comandos obrigatorios
+#Comandos obrigatorios
 
-Baixa a imagem do node com versao alpine (versao mais simplificada e leve)
+#Baixa a imagem do node com versao alpine (versao mais simplificada e leve)
 
 FROM node:alpine
 
-Estabelece o local onde o app ficara no container
+#Estabelece o local onde o app ficara no container
 
-Tambem pode incluir em qualquer outro diretorio
+#Tambem pode incluir em qualquer outro diretorio
 
 WORKDIR /app
 
-Toda instrucäo que cameca com package e termina com .json inserir na pasta /app
+#Toda instrucäo que cameca com package e termina com .json inserir na pasta /app
 
-COPY package*. json ./
+COPY package*.json ./
 
-Executa npm install para adicionar as dependéncias e criar a pasta node_modules
+#Executa npm install para adicionar as dependéncias e criar a pasta node_modules
 
 RUN npm install
 
-Toda a instrucäo que estå no diretörio do arquivo Dockerfile, move para a pasta /usr/app do container
+#Toda a instrucäo que estå no diretörio do arquivo Dockerfile, move para a pasta /usr/app do container
 
 ##vamos ignorar a node_mdules por isso criaremos um .dockerignore
 
